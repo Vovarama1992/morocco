@@ -8,6 +8,12 @@ const urls = ['/kitten1.jpg',  '/kitten2.jpg', '/kitten1.jpg', '/kitten3.jpg', '
 export default function Works({color}) {
     const [isMobile, setIsMobile] = useState(false);
     const [startIndex, setIndex] = useState(0);
+    const [isModal, setModal] = useState(false);
+    const [chosenUrl, setChose] = useState(null);
+    function openModal(url) {
+      setModal(true);
+      setChose(url);
+    }
     let urlsToShow = getGallery(urls, startIndex);
     const cursorRef = useRef(null);
     useEffect(() => {
@@ -61,7 +67,7 @@ export default function Works({color}) {
                         objectPosition="center"
                         />
                     </div>
-                    <button className={styles.preview}>Preview</button>
+                    <button onClick={() => openModal(url)} className={styles.preview}>Preview</button>
                    </div>
                    ) 
                 }
@@ -69,6 +75,14 @@ export default function Works({color}) {
                  <div ref={cursorRef} className={styles.cursor}>
           <div className={styles.redDot}></div>
         </div>
+        {isModal && <div onClick={() => setModal(false)} className={styles.openUrl}>
+          <Image 
+          src={chosenUrl}
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+          />
+          </div>}
         </div>
     )
 }

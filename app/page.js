@@ -80,7 +80,7 @@ export default function Home() {
     marginTop: '7px',
     lineHeight: isMobile ? '1.2' : '1.8',
     fontWeight: 100,
-    color: isMobile ? 'green' : 'inherit',
+    
     width: '90%',
     fontSize: isMobile ? '13px' : '20px',
     fontFamily: "'Alegreya', serif",
@@ -125,10 +125,9 @@ export default function Home() {
   };
 
   const shadow = {
-    textShadow: `-20px -20px 0 rgb(0, 255, 0, 0.1), -20px -20px 0 ${сolor}`,
+    textShadow: `-20px -20px rgb(255, 255, 255, 0.2)`,
     marginBottom: '0px',
-    WebkitTextStroke: `2px ${сolor}`,
-    textStroke: `1px ${сolor}`,
+    
     
   };
 

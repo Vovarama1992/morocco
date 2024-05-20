@@ -43,7 +43,7 @@ export default function Works({color}) {
         <div className={styles.works}>
                  <h2 style={{
                     left: isMobile ? '28%' : '40%',
-                    textShadow: `-18px -18px ${color}`,
+                    textShadow: `-20px -20px rgb(255, 255, 255, 0.2)`,
                  }}>Works</h2>
                  <div className={styles.grid}>
                    {urlsToShow.map((url, index) =>

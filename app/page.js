@@ -107,7 +107,7 @@ export default function Home() {
   const mirrorA = {
     position: 'fixed',
     left: `22%`,
-  top: `calc(70% - ${scroll}px)`,
+  top: `calc(80% - ${scroll}px)`,
   }
   const mirrorB = {
     position: 'fixed',
@@ -116,7 +116,7 @@ export default function Home() {
 }
 const mirrorC = {
   position: 'fixed',
-  left: '70%',
+  left: '80%',
   top: `calc(90% - ${scroll * 0.8}px)`,
 }
 

@@ -71,7 +71,7 @@ export default function Home() {
     alignItems: 'center', 
     
     fontWeight: 600, 
-    fontSize: 'calc(4rem + 2.5vw)',
+    fontSize: isMobile ? '50px' : '100px',
     
     color: 'white',
     borderBottom: '2px dotted rgb(9, 4, 4)', 
@@ -80,6 +80,7 @@ export default function Home() {
     marginTop: '7px',
     lineHeight: isMobile ? '1.2' : '1.8',
     fontWeight: 100,
+    color: isMobile ? 'green' : 'inherit',
     width: '90%',
     fontSize: isMobile ? '13px' : '20px',
     fontFamily: "'Alegreya', serif",
@@ -138,7 +139,7 @@ export default function Home() {
   const mirrorA = {
     position: 'fixed',
     left: `22%`,
-  top: `calc(80% - ${scroll}px)`,
+  top: isMobile ? `calc(67% - ${scroll}px)` : `calc(80% - ${scroll}px)`,
   }
   const mirrorB = {
     position: 'fixed',

@@ -58,6 +58,37 @@ export default function Home() {
       document.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  const titleStyle = {
+    position: 'absolute',
+    top: '100px',
+    paddingTop: '5%',
+    height: 'auto',
+    left: isMobile ? '30%' : '24%', 
+    width: '45%',
+    display: 'flex', 
+    flexDirection: 'column', 
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    
+    fontWeight: 600, 
+    fontSize: 'calc(4rem + 2.5vw)',
+    
+    color: 'white',
+    borderBottom: '2px dotted rgb(9, 4, 4)', 
+  };
+  const descriptionStyle = {
+    marginTop: '7px',
+    lineHeight: isMobile ? '1.2' : '1.8',
+    fontWeight: 100,
+    width: '90%',
+    fontSize: isMobile ? '13px' : '20px',
+    fontFamily: "'Alegreya', serif",
+    textAlign: 'center',
+  };
+  const span = {
+    fontSize: isMobile ? '24px' : '30px',
+    fontWeight: 300,
+  }
 
   
 
@@ -132,11 +163,11 @@ const mirrorC = {
         <div style={{...mirrorLetter, ...mirrorA}}>A</div>
         <div style={{...mirrorLetter, ...mirrorB}}>D</div>
         <div style={{...mirrorLetter, ...mirrorC}}>O</div>
-        <div className={styles.title}>
+        <div style={titleStyle}>
           <div style={shadow}>{name}</div>
           <div className={styles.noShadow}>{surname}</div>
-          <div className={styles.description}>
-            <span>{profession}</span>{profdesc}
+          <div style={descriptionStyle}>
+            <span style={span}>{profession}</span>{profdesc}
           </div>
           <div className={styles.menu}>
             <div className={styles.info}>{city}</div>

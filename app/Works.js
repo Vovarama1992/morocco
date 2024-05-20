@@ -5,7 +5,7 @@ import Image from 'next/image';
 const urls = ['/kitten1.jpg',  '/kitten2.jpg', '/kitten1.jpg', '/kitten3.jpg', '/kitten4.jpg', '/kitten2.jpg',
     ,'/kitten5.jpg'];
 
-export default function Works() {
+export default function Works({color}) {
     const [isMobile, setIsMobile] = useState(false);
     const [startIndex, setIndex] = useState(0);
     let urlsToShow = getGallery(urls, startIndex);
@@ -42,7 +42,8 @@ export default function Works() {
         
         <div className={styles.works}>
                  <h2 style={{
-                    left: isMobile ? '28%' : '40%'
+                    left: isMobile ? '28%' : '40%',
+                    textShadow: `-18px -18px ${color}`,
                  }}>Works</h2>
                  <div className={styles.grid}>
                    {urlsToShow.map((url, index) =>

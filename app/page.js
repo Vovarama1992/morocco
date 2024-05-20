@@ -136,7 +136,7 @@ const mirrorC = {
         </div>
         
       </div>
-      <Works />
+      <Works color={сolor}/>
     </main>
   );
 }

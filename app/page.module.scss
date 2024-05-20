@@ -1,18 +1,82 @@
 .container {
     position: relative;
-    background: radial-gradient(circle at top center, #8f4250,  #2f0505,  #0a0000);
-    top: 100px;
-    left: 10vw;
+    background: radial-gradient(circle at top center,  red 0%, #800000 40%, #400000 70%, black 100%);
+    top: 50px;
     width: 80vw;
     height: 3000px;
     box-sizing: border-box;
+    width: 100%;
     
+}
+.titleWrapper {
+    position: relative;
+    left: 10%;
+    width: 80%;
+    height: 20%;
+    
+}
+.gradientChanger {
+    position: relative;
+    top: 30%;
+    left: 3%;
+    width: 1px;
+    height: 244px;
+    background: white;
+}
+.ball {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    left: -10px;
+    
+}
+.ball:hover {
+    transform: scale(2);
+    box-sizing: border-box;
+    padding: 5px;
+    border: 2px solid white;
+    
+    
+    
+   
+} 
+.ballyellow {
+    background: rgb(120, 120, 7);
+    top: 0;
+}
+.ballred {
+    background: rgb(255, 0, 81);
+    top: 75px;
+}
+.ballgreen{
+    background: rgb(12, 91, 12);
+    top: 150px;
+}
+.ballblue {
+    background: rgb(28, 28, 133);
+    top: 225px;
+}
+
+.mirrorA {
+    left: 12%;
+    top: 80%;
+    
+}
+.mirrorB {
+    left: 90%;
+    top: 8%;
+}
+.mirrorC {
+    left: 90%;
+    top: 87%;
 }
 .title {
     position: absolute;
-    top: 200px;
-    height: 900px;
-    left: 25%;
+    top: 100px;
+    padding-top: 5%;
+    height: auto;
+    left: 24%;
     width: 45%;
     display: flex;
     height: auto;
@@ -27,42 +91,42 @@
     border-bottom: 2px dotted rgb(9, 4, 4);
     
 }
-.shadow {
-    
-    text-shadow: -10px -14px rgba(189, 118, 118, 0.6);
-    margin-bottom: 0px;
-}
+
 .description {
     margin-top: 7px;
-    line-height: 1.5;
+    line-height: 1.8;
     font-weight: 100;
     width: 90%;
-    font-size: 18px;
-    
+    font-size: 25px;
+    font-family: 'Alegreya', serif;
     text-align: center;
 }
 .description span {
-    font-size: 24px;
+    font-size: 34px;
+    font-weight: 600;
 }
 .menu {
     display: flex;
     flex-direction: row;
-    
+    justify-content: center;
     gap: 45px;
-    width: 60%;
-    font-size: 18px;
+    width: 100%;
+    font-family: 'Alegreya', serif;
+    
+    
     height: 10%;
-    margin: 70px auto;
+    margin: 50px 60%;
 
 }
 .info {
     color: white;
     font-size: 20px;
     width: auto;
+    font-size: 26px;
 }
 .works {
     position: relative;
-   top: 720px;
+   top: 120px;
     padding-top: 140px;
     margin-left: 5%;
     display: flex;
@@ -93,7 +157,7 @@
 .imgWrapper {
     position: relative;
     box-sizing: border-box;
-    background: rgb(26, 2, 2);
+    background: inherit;
     padding: 30px;
     width: 45%;
     height: 420px;
@@ -120,4 +184,10 @@
     top: -5%;
     background: rgb(193, 53, 76);
     border-radius: 8px;
+  }
+
+  @media screen and (max-width: 900px) {
+    .title {
+        left: 26%;
+    }
   }

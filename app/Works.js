@@ -33,7 +33,7 @@ export default function Works() {
                    <div key={index} className={styles.imgWrapper} style={{
                     width: isMobile ? '90%' : '45%',
               marginLeft: isMobile ? '0%' : (index % 2 === 0 ? '0%' : '50%'),
-              marginTop: isMobile ? '22px' : (index !== 0 ? '-190px' : '20px'),
+              marginTop: isMobile ? '29px' : (index !== 0 ? '-190px' : '20px'),
                   }} >
                     
                     <div className={styles.imgContainer}>
@@ -64,3 +64,5 @@ function getGallery(array, startIndex) {
   
     return result;
   }
+
+  

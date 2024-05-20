@@ -1,6 +1,6 @@
 'use client';
 import styles from './page.module.scss';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 const urls = ['/kitten1.jpg',  '/kitten2.jpg', '/kitten1.jpg', '/kitten3.jpg', '/kitten4.jpg', '/kitten2.jpg',
     ,'/kitten5.jpg'];
@@ -9,6 +9,22 @@ export default function Works() {
     const [isMobile, setIsMobile] = useState(false);
     const [startIndex, setIndex] = useState(0);
     let urlsToShow = getGallery(urls, startIndex);
+    const cursorRef = useRef(null);
+    useEffect(() => {
+    
+  
+      const cursor = cursorRef.current;
+      
+    
+      const mouseMove = function (e) { 
+     let x = e.clientX;
+     let y = e.clientY;
+     cursor.style.left = x + "px";
+     cursor.style.top = y + "px";
+    };
+    
+     document.addEventListener("mousemove", mouseMove);
+    }, []);
     useEffect(() => {
         const handleResize = () => {
           setIsMobile(window.innerWidth < 800);
@@ -49,6 +65,9 @@ export default function Works() {
                    ) 
                 }
                  </div>
+                 <div ref={cursorRef} className={styles.cursor}>
+          <div className={styles.redDot}></div>
+        </div>
         </div>
     )
 }

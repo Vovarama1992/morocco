@@ -30,7 +30,7 @@ export default function Works() {
                  }}>Works</h2>
                  <div className={styles.grid}>
                    {urlsToShow.map((url, index) =>
-                   <div className={styles.imgWrapper} style={{
+                   <div key={index} className={styles.imgWrapper} style={{
                     width: isMobile ? '90%' : '45%',
               marginLeft: isMobile ? '0%' : (index % 2 === 0 ? '0%' : '50%'),
               marginTop: isMobile ? '22px' : (index !== 0 ? '-190px' : '20px'),

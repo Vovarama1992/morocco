@@ -14,6 +14,7 @@ const time = '5:33PM';
 export default function Home() {
   const [сolor, setColor] = useState('red');
   const [scroll, setScroll] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const cursorRef = useRef(null);
   useEffect(() => {
     
@@ -29,6 +30,18 @@ export default function Home() {
   };
   
    document.addEventListener("mousemove", mouseMove);
+  }, []);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 800);
+    };
+
+    handleResize(); 
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
 
@@ -73,7 +86,7 @@ export default function Home() {
 
   const mirrorLetter = {
     position: 'fixed',
-    fontSize: '105px',
+    fontSize: isMobile ? '75px' : '105px',
     color: 'white',
     fontWeight: '800',
     textShadow: `-8px 8px ${сolor}`,

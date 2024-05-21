@@ -43,14 +43,35 @@ export default function Works({color}) {
           window.removeEventListener('resize', handleResize);
         };
       }, []);
+      const workers = {
+        position: 'absolute',
+        left: isMobile ? '28%' : '40%',
+        
+    top: '0%',
+        
+    };
+    const trueWorks = {
+      position: 'relative',
+      zIndex: 9999,
+    }
+    const worksShadow = {
+      position: 'absolute',
+      
+      left: '-10%',
+      top: '-12%',
+      color: 'rgba(255, 255, 255, 0.1)',
+      webkitTextStroke: `1px ${color}`,
+      marginBottom: '0px',
+      fontFamily: 'Goku',
+      fontWeight: 100,
+    }
     return (
         
         
         <div className={styles.works}>
-                 <h2 style={{
-                    left: isMobile ? '28%' : '40%',
-                    textShadow: `-20px -20px rgb(255, 255, 255, 0.2)`,
-                 }}>Works</h2>
+                 <h2 style={workers}>
+                  <div style={worksShadow}>Works</div>
+                  <span style={trueWorks}>Works</span></h2>
                  <div className={styles.grid}>
                    {urlsToShow.map((url, index) =>
                    <div key={index} className={styles.imgWrapper} style={{

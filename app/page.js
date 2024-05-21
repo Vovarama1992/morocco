@@ -6,7 +6,7 @@ import './globals.css';
 
 const [name, surname] = ['Osama', 'Naimallah'];
 const profession = "Full-stack developer and researcher ";
-const profdesc = 'from Ust-Kamenogorsk been working as freelancer with passion and dream to be the greatest';
+const profdesc = 'from Ust-Kamenogorsk with a passion for building robust and scalable web applications. I specialize in both front-end and back-end technologies, bringing creative solutions to complex problems.';
 const city = "Ekt";
 const weather = '13°C';
 const time = '5:33PM';
@@ -62,7 +62,7 @@ export default function Home() {
     position: 'absolute',
     top: '18%',
     paddingTop: '5%',
-    height: isMobile ? '420px' : 'auto',
+    height: isMobile ? '480px' : 'auto',
     left: isMobile ? '19%' : '28%', 
     width: isMobile ? '65%' : '45%',
     display: 'flex', 
@@ -71,7 +71,7 @@ export default function Home() {
     alignItems: 'center', 
     
     fontWeight: 600, 
-    fontSize: isMobile ? '110px' : '140px',
+    fontSize: isMobile ? '100px' : '140px',
     
     color: 'white',
     borderBottom: '2px dotted rgb(9, 4, 4)', 
@@ -94,23 +94,29 @@ export default function Home() {
 
   
 
-  function generateGradient(color) {
+  function generateGradient(color, toBlack) {
+    if (isMobile) {
+      toBlack = 14;
+    } 
+    else toBlack = 18;
+  
+
     let gradient;
-    switch(color) {
+    switch(сolor) {
       case 'red':
-        gradient = 'radial-gradient(circle at top center, #E75480 4%,  black 20%)';
+        gradient = `radial-gradient(circle at top center, #E75480 4%,  black ${toBlack}%)`;
         break;
       case 'green':
-        gradient = 'radial-gradient(circle at top center, lime 0%, #00FF00 2%, #008000 8%, black 30%)';
+        gradient = `radial-gradient(circle at top center, lime 0%, #00FF00 2%, #008000 5%, black ${toBlack}%)`;
         break;
       case 'blueviolet':
-        gradient = 'radial-gradient(circle at top center, #000080 0%, #4B0082 2%, #8A2BE2 8%, black 30%)';
+        gradient = `radial-gradient(circle at top center, #000080 0%, #4B0082 2%, #8A2BE2 5%, black ${toBlack}%)`;
         break;
         case 'lightblue':
-        gradient = 'radial-gradient(circle at top center, #ADD8E6 0%, #87CEEB 2%, #00BFFF 8%, black 30%)';
+        gradient = `radial-gradient(circle at top center, #ADD8E6 0%, #87CEEB 2%, #00BFFF 5%, black ${toBlack}%)`;
         break;
       case 'yellow':
-        gradient = 'radial-gradient(circle at top center, yellow 0%, #FFFF00 2%, #FFD700 8%, black 30%)';
+        gradient = `radial-gradient(circle at top center, yellow 0%, #FFFF00 2%, #FFD700 5%, black ${toBlack}%)`;
         break;
       default:
         gradient = 'radial-gradient(circle at top center, white 0%, black 100%)';
@@ -132,9 +138,9 @@ export default function Home() {
   const shadow = {
     position: 'absolute',
     left: '-6%',
-    top: '-23%',
+    top: '-17%',
     color: 'rgba(255, 255, 255, 0.1)',
-    webkitTextStroke: '1px white',
+    webkitTextStroke: `1px ${сolor}`,
     marginBottom: '0px',
     fontFamily: 'Goku',
     fontWeight: 100,
@@ -144,7 +150,7 @@ export default function Home() {
   };
   const withShadow = {
     color: 'rgba(255, 255, 255, 1)',
-    
+    position: 'relative',
     marginBottom: '0px',
     fontFamily: 'Goku',
     fontWeight: 100,
@@ -179,13 +185,13 @@ export default function Home() {
   }
   const mirrorB = {
     position: 'fixed',
-    left: isMobile ? '85%' : '70%',
-    top: `calc(8% - ${scroll * 0.2}px)`,
+    left: isMobile ? '72%' : '70%',
+    top: `calc(6% - ${scroll * 0.2}px)`,
 }
 const mirrorC = {
   position: 'fixed',
-  left: isMobile ? '77%' : '75%',
-  top: `calc(90% - ${scroll * 0.8}px)`,
+  left: isMobile ? '74%' : '75%',
+  top: `calc(68% - ${scroll * 0.8}px)`,
 }
 const od = {
   position: 'absolute',
@@ -239,7 +245,7 @@ const cloud = {
           <div className={`${styles.ball} ${styles.ballblueLight}`} onClick={onColor} data-color='lightblue'></div>
           <div className={`${styles.ball} ${styles.ballgreen}`} onClick={onColor} data-color='green'></div>
         </div>
-        <div style={{...mirrorLetter, ...mirrorA}}>A</div>
+        <div style={{...mirrorLetter, ...mirrorA}}>B</div>
         <div style={{...mirrorLetter, ...mirrorB}}>D</div>
         <div style={{...mirrorLetter, ...mirrorC}}>O</div>
         <div style={titleStyle}>

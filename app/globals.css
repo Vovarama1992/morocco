@@ -2,3 +2,16 @@ body {
     cursor: none;
     
 }
+
+@font-face {
+    font-family: 'TrumpGothicPro-Bold';
+    src: url('fonts/TrumpGothicPro/TrumpGothicPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Goku';
+    src: url('fonts/TrumpGothicPro/goku.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }

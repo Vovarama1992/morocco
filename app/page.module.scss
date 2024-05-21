@@ -1,7 +1,7 @@
 .container {
     position: relative;
     background: radial-gradient(circle at top center,  red 0%, #800000 40%, #400000 70%, black 100%);
-    top: 50px;
+    top: 0px;
     width: 80vw;
     height: 3300px;
     box-sizing: border-box;
@@ -44,18 +44,18 @@
 }
 .gradientChanger {
     position: relative;
-    top: 30%;
-    left: 3%;
+    top: 38%;
+    left: -7%;
     width: 1px;
-    height: 244px;
+    height: 312px;
     background: white;
 }
 .ball {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
-    left: -10px;
+    left: -7px;
     
 }
 .ball:hover {
@@ -70,19 +70,23 @@
 } 
 .ballyellow {
     background: rgb(120, 120, 7);
-    top: 0;
+    top: 225px;
 }
 .ballred {
     background: rgb(255, 0, 81);
-    top: 75px;
+    top: 0;
 }
 .ballgreen{
     background: rgb(12, 91, 12);
-    top: 150px;
+    top: 300px;
 }
-.ballblue {
-    background: rgb(28, 28, 133);
-    top: 225px;
+.ballblueDark {
+    background: rgb(68, 12, 132);
+    top: 75px;
+}
+.ballblueLight{
+    background: rgb(58, 104, 211);
+    top: 150px;
 }
 
 .mirrorA {
@@ -129,9 +133,9 @@
     align-items: center;
     
     font-weight: 600;
-    font-size: calc(4rem + 2.5vw);
+    font-size: 1000px;
 
-    color: white;
+    color: green;
     border-bottom: 2px dotted rgb(9, 4, 4);
     
 }
@@ -170,8 +174,8 @@
 }
 .works {
     position: relative;
-   top: 120px;
-    padding-top: 140px;
+   top: 200px;
+    padding-top: 205px;
     margin-left: 5%;
     display: flex;
     justify-content: center;
@@ -270,4 +274,9 @@
     .description span {
         font-size: 24px;
     }
+    .works {
+        top: 40px;
+    }
   }
+
+  

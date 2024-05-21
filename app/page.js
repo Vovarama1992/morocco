@@ -71,7 +71,7 @@ export default function Home() {
     alignItems: 'center', 
     
     fontWeight: 600, 
-    fontSize: isMobile ? '120px' : '170px',
+    fontSize: isMobile ? '110px' : '140px',
     
     color: 'white',
     borderBottom: '2px dotted rgb(9, 4, 4)', 
@@ -82,12 +82,12 @@ export default function Home() {
     fontWeight: 100,
     
     width: isMobile ? '140%' : '90%',
-    fontSize: isMobile ? '17px' : '22px',
+    fontSize: isMobile ? '15px' : '19px',
     fontFamily: 'Raleway, sans-serif',
     textAlign: 'center',
   };
   const span = {
-    fontSize: isMobile ? '24px' : '30px',
+    fontSize: isMobile ? '22px' : '27px',
     fontWeight: 100,
     fontFamily: 'TrumpGothicPro-Bold',
   }

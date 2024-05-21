@@ -17,6 +17,7 @@ export default function Home() {
   const [scroll, setScroll] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const cursorRef = useRef(null);
+  const scrollHeight = Math.min(scroll * 0.05, 100);
   useEffect(() => {
     
   
@@ -206,6 +207,46 @@ const od = {
   left: '-9%',
   top: '56px',
 }
+const scroller = {
+  position: 'fixed',
+  width: '500px',
+  height: '500px',
+  color: 'white',
+  left: isMobile ? '70%' : '90%',
+  top: '16px',
+}
+const lineA = {
+  position: 'absolute',
+  top: '10%',
+  width: '55px',
+  height: '1px',
+  background: 'white'
+}
+const lineB = {
+  position: 'absolute',
+  top: '12%',
+  width: '55px',
+  height: '2px',
+  background: 'white'
+}
+const scrollLine = {
+  position: 'absolute',
+  left:  '5%',
+  top: '18%',
+  opacity: 0.5,
+  width: '1px',
+  height: isMobile ? '300px' : '460px',
+  background: 'white'
+}
+const scrolledLine = {
+  position: 'absolute',
+  left: '0%',
+  top: '0%',
+  width: '200%',
+  background: `${сolor}`,
+  height: `${scrollHeight}%`,
+}
+
 const point = {
   color: 'red',
   fontSize: '40px',
@@ -216,7 +257,7 @@ const cloudWrapper = {
   marginTop: '-2px',
   borderRadius: '50%',
   border: '4px solid rgba(0, 0, 0, 0.5)',
-  background: 'rgb(231, 84, 128)',
+  background: `${сolor}`,
   
   height: '50px',
   display: 'flex',
@@ -238,7 +279,17 @@ const cloud = {
     <main className={styles.container} style={{ background: gradient }}>
       <div className={styles.titleWrapper}>
         <div style={od}>OD<span style={point}>.</span>
+        <div style={scroller}>
         
+          <div style={lineA}></div>
+          
+          <div style={lineB}></div>
+          <div style={scrollLine}>
+          <div style={scrolledLine}></div>
+          </div>
+        
+          </div>
+                              
         </div>
         <div style={gradientChangerStyles }>
           <div className={`${styles.ball} ${styles.ballred}`} onClick={onColor} data-color='red'></div>
@@ -280,6 +331,7 @@ const cloud = {
         <div ref={cursorRef} className={styles.cursor}>
           <div className={styles.redDot}></div>
         </div>
+        
         
       </div>
       <Works color={сolor}/>

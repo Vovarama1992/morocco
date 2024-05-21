@@ -65,6 +65,18 @@ export default function Works({color}) {
       fontFamily: 'Goku',
       fontWeight: 100,
     }
+
+    const previewStyle = {
+      position: 'absolute',
+      color: 'white',
+      width: '28%',
+      height: '9%',
+      left: '50%',
+      top: '-5%',
+      background: `${color}`,
+      borderRadius: '8px',
+      cursor: 'none',
+  };
     return (
         
         
@@ -88,7 +100,7 @@ export default function Works({color}) {
                         objectPosition="center"
                         />
                     </div>
-                    <button onClick={() => openModal(url)} className={styles.preview}>Preview</button>
+                    <button onClick={() => openModal(url)} style={previewStyle}>Preview</button>
                    </div>
                    ) 
                 }
@@ -120,4 +132,3 @@ function getGallery(array, startIndex) {
     return result;
   }
 
-  

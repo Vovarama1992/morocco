@@ -11,6 +11,7 @@ const city = "Ekt";
 const weather = '13°C';
 const time = '5:33PM';
 
+
 export default function Home() {
   const [сolor, setColor] = useState('red');
   const [scroll, setScroll] = useState(0);
@@ -20,6 +21,7 @@ export default function Home() {
     
   
     const cursor = cursorRef.current;
+    cursor.style.display = 'block';
     
   
     const mouseMove = function (e) { 
@@ -71,7 +73,7 @@ export default function Home() {
     alignItems: 'center', 
     
     fontWeight: 600, 
-    fontSize: isMobile ? '100px' : '140px',
+    fontSize: isMobile ? '80px' : '140px',
     
     color: 'white',
     borderBottom: '2px dotted rgb(9, 4, 4)', 
@@ -128,6 +130,7 @@ export default function Home() {
 
   const mirrorLetter = {
     position: 'fixed',
+    transition: 'left 0.9s ease, top 0.9s ease',
     fontSize: isMobile ? '85px' : '175px',
     color: 'white',
     fontWeight: '200',
@@ -185,12 +188,12 @@ export default function Home() {
   }
   const mirrorB = {
     position: 'fixed',
-    left: isMobile ? '72%' : '70%',
+    left: isMobile ? '55%' : '70%',
     top: `calc(6% - ${scroll * 0.2}px)`,
 }
 const mirrorC = {
   position: 'fixed',
-  left: isMobile ? '74%' : '75%',
+  left: isMobile ? '59%' : '75%',
   top: `calc(68% - ${scroll * 0.8}px)`,
 }
 const od = {
@@ -208,14 +211,14 @@ const point = {
   fontSize: '40px',
 }
 const cloudWrapper = {
-  width: '40px',
+  width: '50px',
   marginLeft: '-10px',
   marginTop: '-2px',
   borderRadius: '50%',
   border: '4px solid rgba(0, 0, 0, 0.5)',
   background: 'rgb(231, 84, 128)',
   
-  height: '40px',
+  height: '50px',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',

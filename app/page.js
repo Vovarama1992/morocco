@@ -6,7 +6,7 @@ import './globals.css';
 
 const [name, surname] = ['Osama', 'Naimallah'];
 const profession = "Full-stack developer and researcher ";
-const profdesc = 'from Ust-Kamenogorsk with a passion for building robust and scalable web applications. I specialize in both front-end and back-end technologies, bringing creative solutions to complex problems.';
+const profdesc = 'from Ust-Kamenogorsk specialize in both front-end and back-end technologies, bringing creative solutions to complex problems.';
 const city = "Ekt";
 const weather = '13°C';
 const time = '5:33PM';
@@ -17,6 +17,7 @@ export default function Home() {
   const [scroll, setScroll] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const cursorRef = useRef(null);
+  const dotRef = useRef(null);
   const scrollHeight = Math.min(scroll * 0.05, 100);
   useEffect(() => {
     
@@ -74,7 +75,7 @@ export default function Home() {
     alignItems: 'center', 
     
     fontWeight: 600, 
-    fontSize: isMobile ? '80px' : '140px',
+    fontSize: isMobile ? '80px' : '125px',
     
     color: 'white',
     borderBottom: '2px dotted rgb(9, 4, 4)', 
@@ -85,12 +86,12 @@ export default function Home() {
     fontWeight: 100,
     
     width: isMobile ? '140%' : '90%',
-    fontSize: isMobile ? '15px' : '19px',
+    fontSize: isMobile ? '14px' : '18px',
     fontFamily: 'Raleway, sans-serif',
     textAlign: 'center',
   };
   const span = {
-    fontSize: isMobile ? '22px' : '27px',
+    fontSize: isMobile ? '20px' : '25px',
     fontWeight: 100,
     fontFamily: 'TrumpGothicPro-Bold',
   }
@@ -99,15 +100,15 @@ export default function Home() {
 
   function generateGradient(color, toBlack) {
     if (isMobile) {
-      toBlack = 14;
+      toBlack = 24;
     } 
-    else toBlack = 18;
+    else toBlack = 20;
   
 
     let gradient;
     switch(сolor) {
       case 'red':
-        gradient = `radial-gradient(circle at top center, #E75480 4%,  black ${toBlack}%)`;
+        gradient = `radial-gradient(circle  at 50% -2%, #FF4D6D,  #1A0A0F ${toBlack}%), black 60%`;
         break;
       case 'green':
         gradient = `radial-gradient(circle at top center, lime 0%, #00FF00 2%, #008000 5%, black ${toBlack}%)`;
@@ -132,7 +133,7 @@ export default function Home() {
   const mirrorLetter = {
     position: 'fixed',
     transition: 'left 0.9s ease, top 0.9s ease',
-    fontSize: isMobile ? '85px' : '175px',
+    fontSize: isMobile ? '85px' : '145px',
     color: 'white',
     fontWeight: '200',
     fontFamily: 'Goku',
@@ -168,8 +169,8 @@ export default function Home() {
 
   const gradientChangerStyles = {
     position: 'fixed',
-    top: '38%',
-    left: isMobile ? '-10%' : '4%',
+    top: '33%',
+    left: isMobile ? '-10%' : '1%',
     width: '1px',
     height: '312px',
     background: 'white',
@@ -195,11 +196,11 @@ export default function Home() {
 const mirrorC = {
   position: 'fixed',
   left: isMobile ? '59%' : '75%',
-  top: `calc(68% - ${scroll * 0.8}px)`,
+  top: `calc(76% - ${scroll * 0.8}px)`,
 }
 const od = {
   position: 'absolute',
-  fontSize: '46px',
+  fontSize: '40px',
   fontFamily: 'Goku',
   width: '500px',
   height: '500px',
@@ -233,13 +234,14 @@ const scrollLine = {
   position: 'absolute',
   left:  '5%',
   top: '18%',
-  opacity: 0.5,
+  opacity: 0.8,
   width: '1px',
   height: isMobile ? '300px' : '460px',
   background: 'white'
 }
 const scrolledLine = {
   position: 'absolute',
+  opacity: 1,
   left: '0%',
   top: '0%',
   width: '200%',
@@ -250,6 +252,9 @@ const scrolledLine = {
 const point = {
   color: 'red',
   fontSize: '40px',
+}
+const fullGrown = {
+  transform: 'scale(2.2)',
 }
 const cloudWrapper = {
   width: '50px',
@@ -275,6 +280,7 @@ const cloud = {
   height: '30px',
   background: 'white,'
 }
+const getStyle = (dataColor) => (dataColor === сolor ? fullGrown : {});
   return (
     <main className={styles.container} style={{ background: gradient }}>
       <div className={styles.titleWrapper}>
@@ -292,12 +298,11 @@ const cloud = {
                               
         </div>
         <div style={gradientChangerStyles }>
-          <div className={`${styles.ball} ${styles.ballred}`} onClick={onColor} data-color='red'></div>
-          <div className={`${styles.ball} ${styles.ballblueDark}`} onClick={onColor} data-color='blueviolet'></div>
-          <div className={`${styles.ball} ${styles.ballblueLight}`} onClick={onColor} data-color='lightblue'></div>
-          <div className={`${styles.ball} ${styles.ballyellow}`} onClick={onColor} data-color='yellow'></div>
-          <div className={`${styles.ball} ${styles.ballblueLight}`} onClick={onColor} data-color='lightblue'></div>
-          <div className={`${styles.ball} ${styles.ballgreen}`} onClick={onColor} data-color='green'></div>
+          <div className={`${styles.ball} ${styles.ballred}`} style={getStyle('red')} onClick={onColor} data-color='red'></div>
+          <div className={`${styles.ball} ${styles.ballblueDark}`} style={getStyle('blueviolet')} onClick={onColor} data-color='blueviolet'></div>
+          <div className={`${styles.ball} ${styles.ballblueLight}`} style={getStyle('lightblue')} onClick={onColor} data-color='lightblue'></div>
+          <div className={`${styles.ball} ${styles.ballyellow}`} style={getStyle('yellow')} onClick={onColor} data-color='yellow'></div>
+          <div className={`${styles.ball} ${styles.ballgreen}`} style={getStyle('green')} onClick={onColor} data-color='green'></div>
         </div>
         <div style={{...mirrorLetter, ...mirrorA}}>B</div>
         <div style={{...mirrorLetter, ...mirrorB}}>D</div>
@@ -329,7 +334,7 @@ const cloud = {
           
         </div>
         <div ref={cursorRef} className={styles.cursor}>
-          <div className={styles.redDot}></div>
+          <div ref={dotRef} className={styles.redDot}></div>
         </div>
         
         

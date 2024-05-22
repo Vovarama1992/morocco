@@ -1,11 +1,11 @@
 .container {
     position: relative;
     background: radial-gradient(circle at top center,  red 0%, #800000 40%, #400000 70%, black 100%);
-    top: 0px;
-    width: 80vw;
+    top: -20px;
+    left: -20px;
     height: 3300px;
     box-sizing: border-box;
-    width: 100%;
+    width: 100vw;
     cursor: none;
     
 }
@@ -15,22 +15,26 @@
     display: none;
     top: -1px;
     left: -1px;
-    height: 40px;
-    width: 40px;     pointer-events: none;
-    border: 4px solid red;
+    height: 80px;
+    transition: all 0.1s ease;
+    width: 80px;     pointer-events: none;
+    border: 2px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     box-sizing: border-box;
-    transition: 0, 1s;
+    
     transform: translate(-50%, -50%);
 }
 .redDot {
     position: absolute;
+    left: 45%;
+    top: 45%;
+    transition: all 0.1s ease;
     z-index: 9999;
-    width: 5px;
-    height: 5px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
     background: red;
     
@@ -53,10 +57,10 @@
 }
 .ball {
     position: absolute;
-    width: 14px;
-    height: 14px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    left: -7px;
+    left: -4px;
     
 }
 .ball:hover {
@@ -75,11 +79,11 @@
 }
 .ballred {
     background: rgb(255, 0, 81);
-    top: 0;
+    top: 0px;
 }
 .ballgreen{
     background: rgb(12, 91, 12);
-    top: 300px;
+    top: 303px;
 }
 .ballblueDark {
     background: rgb(68, 12, 132);
@@ -171,7 +175,7 @@
     color: white;
     font-size: 20px;
     width: auto;
-    font-size: 26px;
+    font-size: 21px;
 }
 .works {
     position: relative;

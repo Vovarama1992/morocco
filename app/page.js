@@ -145,10 +145,10 @@ export default function Home() {
     position: 'absolute',
     left: '-6%',
     top: '-17%',
-    color: 'rgba(0, 0, 0, 0.1)',
+    color: 'rgba(0, 0, 0, 0.2)',
     
-    webkitTextStroke: `1.1px white`,
-    textStroke: `1.1px white`,
+    webkitTextStroke: `1px white`,
+    textStroke: `1px white`,
 marginBottom: '0px',
     fontFamily: 'Goku',
     fontWeight: 100,

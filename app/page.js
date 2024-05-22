@@ -6,14 +6,15 @@ import './globals.css';
 
 const [name, surname] = ['Osama', 'Naimallah'];
 const profession = "Full-stack developer and researcher ";
-const profdesc = 'from Ust-Kamenogorsk specialize in both front-end and back-end technologies, bringing creative solutions to complex problems.';
+const profdesc = 'from Turkestan specialize in both front-end and back-end technologies, bringing creative solutions to complex problems.';
 const city = "Ekt";
 const weather = '13°C';
 const time = '5:33PM';
+const colours = ['red', 'blueviolet', 'lightblue', 'yellow', 'green'];
 
 
 export default function Home() {
-  const [сolor, setColor] = useState('red');
+  const [colr, setcolr] = useState('red');
   const [scroll, setScroll] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const cursorRef = useRef(null);
@@ -98,15 +99,15 @@ export default function Home() {
 
   
 
-  function generateGradient(color, toBlack) {
+  function generateGradient(colr, toBlack) {
     if (isMobile) {
-      toBlack = 24;
+      toBlack = 15;
     } 
-    else toBlack = 20;
+    else toBlack = 16;
   
 
     let gradient;
-    switch(сolor) {
+    switch(colr) {
       case 'red':
         gradient = `radial-gradient(circle  at 50% -2%, #FF4D6D,  #1A0A0F ${toBlack}%), black 60%`;
         break;
@@ -128,7 +129,7 @@ export default function Home() {
     return gradient;
   }
 
-  const gradient = generateGradient(сolor);
+  const gradient = generateGradient(colr);
 
   const mirrorLetter = {
     position: 'fixed',
@@ -137,7 +138,7 @@ export default function Home() {
     color: 'white',
     fontWeight: '200',
     fontFamily: 'Goku',
-    textShadow: `-8px 13px ${сolor}`,
+    textShadow: `-8px 13px ${colr}`,
   };
 
   const shadow = {
@@ -145,7 +146,7 @@ export default function Home() {
     left: '-6%',
     top: '-17%',
     color: 'rgba(255, 255, 255, 0.1)',
-    webkitTextStroke: `1px ${сolor}`,
+    webkitTextStroke: `1px ${colr}`,
     marginBottom: '0px',
     fontFamily: 'Goku',
     fontWeight: 100,
@@ -169,20 +170,19 @@ export default function Home() {
 
   const gradientChangerStyles = {
     position: 'fixed',
-    top: '33%',
-    left: isMobile ? '-10%' : '1%',
-    width: '1px',
-    height: '312px',
-    background: 'white',
+    top: '30%',
+    left: isMobile ? '-10%' : '3%',
+    width: '0.1px',
+    
+    height: '270px',
+    background: 'inherit',
   
 };
 
 
-  function onColor(e) {
-    const newColor = e.target.getAttribute('data-color');
-    setColor(newColor);
-   
-  }
+function oncolr(newcolr) {
+  setcolr(newcolr);
+}
   const mirrorA = {
     position: 'fixed',
     left: isMobile ? '8%' : `15%`,
@@ -213,7 +213,7 @@ const scroller = {
   width: '500px',
   height: '500px',
   color: 'white',
-  left: isMobile ? '70%' : '90%',
+  left: isMobile ? '70%' : '96%',
   top: '16px',
 }
 const lineA = {
@@ -232,9 +232,9 @@ const lineB = {
 }
 const scrollLine = {
   position: 'absolute',
-  left:  '5%',
-  top: '18%',
-  opacity: 0.8,
+  left:  '5.5%',
+  top: '14%',
+  opacity: 0.6,
   width: '1px',
   height: isMobile ? '300px' : '460px',
   background: 'white'
@@ -245,7 +245,7 @@ const scrolledLine = {
   left: '0%',
   top: '0%',
   width: '200%',
-  background: `${сolor}`,
+  background: `${colr}`,
   height: `${scrollHeight}%`,
 }
 
@@ -253,16 +253,14 @@ const point = {
   color: 'red',
   fontSize: '40px',
 }
-const fullGrown = {
-  transform: 'scale(2.2)',
-}
+
 const cloudWrapper = {
   width: '50px',
   marginLeft: '-10px',
   marginTop: '-2px',
   borderRadius: '50%',
   border: '4px solid rgba(0, 0, 0, 0.5)',
-  background: `${сolor}`,
+  background: `${colr}`,
   
   height: '50px',
   display: 'flex',
@@ -280,7 +278,24 @@ const cloud = {
   height: '30px',
   background: 'white,'
 }
-const getStyle = (dataColor) => (dataColor === сolor ? fullGrown : {});
+
+const bigBall = {
+    position: 'absolute',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    left: '-16px',
+    width: '42px',
+    height: '42px',
+    borderRadius: '50%',
+    border: 'none',
+    background: 'inherit',
+}
+
+const border = {
+  border: '2px solid white',
+}
+
   return (
     <main className={styles.container} style={{ background: gradient }}>
       <div className={styles.titleWrapper}>
@@ -297,13 +312,34 @@ const getStyle = (dataColor) => (dataColor === сolor ? fullGrown : {});
           </div>
                               
         </div>
-        <div style={gradientChangerStyles }>
-          <div className={`${styles.ball} ${styles.ballred}`} style={getStyle('red')} onClick={onColor} data-color='red'></div>
-          <div className={`${styles.ball} ${styles.ballblueDark}`} style={getStyle('blueviolet')} onClick={onColor} data-color='blueviolet'></div>
-          <div className={`${styles.ball} ${styles.ballblueLight}`} style={getStyle('lightblue')} onClick={onColor} data-color='lightblue'></div>
-          <div className={`${styles.ball} ${styles.ballyellow}`} style={getStyle('yellow')} onClick={onColor} data-color='yellow'></div>
-          <div className={`${styles.ball} ${styles.ballgreen}`} style={getStyle('green')} onClick={onColor} data-color='green'></div>
-        </div>
+        <div style={gradientChangerStyles}>
+  {colours.map((colour, index) => {
+    const colrClass = 'ball' + colour;
+
+    return (
+      <div key={index} style={{ ...bigBall, top: `${index * 25}%`, ...(colr === colour && border) }}>
+        <div className={`${styles.ball} ${styles[colrClass]} ${colr === colour ? styles.checkedBall : ''}`}  onClick={() => oncolr(colour)} data-color={colour}></div>
+      </div>
+    );
+  })}
+</div>
+        {/*<div style={{...bigBall, ...ballred}} >
+            <div className={`${styles.ball} ${styles.ballred}`}  onClick={oncolr} data-colr='red'></div>
+          </div>
+          <div style={{...bigBall, ...ballblueviolet}} >
+            <div className={`${styles.ball} ${styles.ballblueDark}`}  onClick={oncolr} data-colr='blueviolet'></div>
+          </div>
+          <div style={{...bigBall, ...balllightblue}} >
+            <div className={`${styles.ball} ${styles.ballblueLight}`}  onClick={oncolr} data-colr='lightblue'></div>
+            </div>
+          <div style={{...bigBall, ...ballyellow}} >
+          <div className={`${styles.ball} ${styles.ballyellow}`}  onClick={oncolr} data-colr='yellow'></div>
+          </div>
+          <div style = {{...bigBall, ...ballgreen}} >
+            <div className={`${styles.ball} ${styles.ballgreen}`}  onClick={oncolr} data-colr='green'></div>
+          
+        </div>*/}
+        
         <div style={{...mirrorLetter, ...mirrorA}}>B</div>
         <div style={{...mirrorLetter, ...mirrorB}}>D</div>
         <div style={{...mirrorLetter, ...mirrorC}}>O</div>
@@ -322,8 +358,8 @@ const getStyle = (dataColor) => (dataColor === сolor ? fullGrown : {});
             <div className={styles.info}>{time}</div>
             
             <div style={cloudWrapper}>
-            <div  style={{display: 'none'}} class="bg-red duration-300 ease-linear transform  w-[30px] h-[30px] rounded-full flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clouds-fill" viewBox="0 0 16 16"><path d="M11.473 9a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 14h8.5a2.5 2.5 0 1 0-.027-5z"></path><path d="M14.544 9.772a3.506 3.506 0 0 0-2.225-1.676 5.502 5.502 0 0 0-6.337-4.002 4.002 4.002 0 0 1 7.392.91 2.5 2.5 0 0 1 1.17 4.769z"></path></svg></div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clouds-fill" viewBox="0 0 16 16"><path d="M11.473 9a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 14h8.5a2.5 2.5 0 1 0-.027-5z"></path><path d="M14.544 9.772a3.506 3.506 0 0 0-2.225-1.676 5.502 5.502 0 0 0-6.337-4.002 4.002 4.002 0 0 1 7.392.91 2.5 2.5 0 0 1 1.17 4.769z"></path></svg>
+            <div  style={{display: 'none'}} class="bg-red duration-300 ease-linear transform  w-[30px] h-[30px] rounded-full flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentcolr" class="bi bi-clouds-fill" viewBox="0 0 16 16"><path d="M11.473 9a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 14h8.5a2.5 2.5 0 1 0-.027-5z"></path><path d="M14.544 9.772a3.506 3.506 0 0 0-2.225-1.676 5.502 5.502 0 0 0-6.337-4.002 4.002 4.002 0 0 1 7.392.91 2.5 2.5 0 0 1 1.17 4.769z"></path></svg></div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentcolr" class="bi bi-clouds-fill" viewBox="0 0 16 16"><path d="M11.473 9a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 14h8.5a2.5 2.5 0 1 0-.027-5z"></path><path d="M14.544 9.772a3.506 3.506 0 0 0-2.225-1.676 5.502 5.502 0 0 0-6.337-4.002 4.002 4.002 0 0 1 7.392.91 2.5 2.5 0 0 1 1.17 4.769z"></path></svg>
             <path d="M11.473 9a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 14h8.5a2.5 2.5 0 1 0-.027-5z"></path>
             <path d="M14.544 9.772a3.506 3.506 0 0 0-2.225-1.676 5.502 5.502 0 0 0-6.337-4.002 4.002 4.002 0 0 1 7.392.91 2.5 2.5 0 0 1 1.17 4.769z"></path>
 
@@ -339,7 +375,7 @@ const getStyle = (dataColor) => (dataColor === сolor ? fullGrown : {});
         
         
       </div>
-      <Works color={сolor}/>
+      <Works colr={colr}/>
     </main>
   );
 }

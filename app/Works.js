@@ -5,7 +5,7 @@ import Image from 'next/image';
 const urls = ['/kitten1.jpg',  '/kitten2.jpg', '/kitten1.jpg', '/kitten3.jpg', '/kitten4.jpg', '/kitten2.jpg',
     ,'/kitten5.jpg'];
 
-export default function Works({color}) {
+export default function Works({colr}) {
     const [isMobile, setIsMobile] = useState(false);
     const [startIndex, setIndex] = useState(0);
     const [isModal, setModal] = useState(false);
@@ -59,8 +59,8 @@ export default function Works({color}) {
       
       left: '-10%',
       top: '-12%',
-      color: 'rgba(255, 255, 255, 0.1)',
-      webkitTextStroke: `1px ${color}`,
+      colr: 'rgba(255, 255, 255, 0.1)',
+      webkitTextStroke: `1px ${colr}`,
       marginBottom: '0px',
       fontFamily: 'Goku',
       fontWeight: 100,
@@ -68,12 +68,12 @@ export default function Works({color}) {
 
     const previewStyle = {
       position: 'absolute',
-      color: 'white',
+      colr: 'white',
       width: '28%',
       height: '9%',
       left: '50%',
       top: '-5%',
-      background: `${color}`,
+      background: `${colr}`,
       borderRadius: '8px',
       cursor: 'none',
   };

@@ -65,9 +65,9 @@ export default function Home() {
   }, []);
   const titleStyle = {
     position: 'absolute',
-    top: '18%',
+    top: isMobile ? '24%' : '18%',
     paddingTop: '5%',
-    height: isMobile ? '480px' : 'auto',
+    height: isMobile ? '780px' : 'auto',
     left: isMobile ? '19%' : '28%', 
     width: isMobile ? '65%' : '45%',
     display: 'flex', 
@@ -76,7 +76,7 @@ export default function Home() {
     alignItems: 'center', 
     
     fontWeight: 600, 
-    fontSize: isMobile ? '80px' : '125px',
+    fontSize: isMobile ? '70px' : '125px',
     
     color: 'white',
     borderBottom: '2px dotted rgb(9, 4, 4)', 
@@ -103,7 +103,7 @@ export default function Home() {
     if (isMobile) {
       toBlack = 15;
     } 
-    else toBlack = 16;
+    else toBlack = 22;
   
 
     let gradient;
@@ -115,7 +115,7 @@ export default function Home() {
         gradient = `radial-gradient(circle at top center, lime 0%, #00FF00 2%, #008000 5%, black ${toBlack}%)`;
         break;
       case 'blueviolet':
-        gradient = `radial-gradient(circle at top center, #000080 0%, #4B0082 2%, #8A2BE2 5%, black ${toBlack}%)`;
+        gradient = `radial-gradient(circle  at 50% -2%, #1E3A8A, black ${toBlack}%, black 60%)`;
         break;
         case 'lightblue':
         gradient = `radial-gradient(circle at top center, #ADD8E6 0%, #87CEEB 2%, #00BFFF 5%, black ${toBlack}%)`;
@@ -145,9 +145,11 @@ export default function Home() {
     position: 'absolute',
     left: '-6%',
     top: '-17%',
-    color: 'rgba(255, 255, 255, 0.1)',
+    color: 'rgba(0, 0, 0, 0.1)',
+    
     webkitTextStroke: `1px ${colr}`,
-    marginBottom: '0px',
+    textStroke: `1px ${colr}`,
+marginBottom: '0px',
     fontFamily: 'Goku',
     fontWeight: 100,
    
@@ -255,7 +257,7 @@ const point = {
 }
 
 const cloudWrapper = {
-  width: '50px',
+  width: isMobile ? '68px' : '50px',
   marginLeft: '-10px',
   marginTop: '-2px',
   borderRadius: '50%',
@@ -323,22 +325,7 @@ const border = {
     );
   })}
 </div>
-        {/*<div style={{...bigBall, ...ballred}} >
-            <div className={`${styles.ball} ${styles.ballred}`}  onClick={oncolr} data-colr='red'></div>
-          </div>
-          <div style={{...bigBall, ...ballblueviolet}} >
-            <div className={`${styles.ball} ${styles.ballblueDark}`}  onClick={oncolr} data-colr='blueviolet'></div>
-          </div>
-          <div style={{...bigBall, ...balllightblue}} >
-            <div className={`${styles.ball} ${styles.ballblueLight}`}  onClick={oncolr} data-colr='lightblue'></div>
-            </div>
-          <div style={{...bigBall, ...ballyellow}} >
-          <div className={`${styles.ball} ${styles.ballyellow}`}  onClick={oncolr} data-colr='yellow'></div>
-          </div>
-          <div style = {{...bigBall, ...ballgreen}} >
-            <div className={`${styles.ball} ${styles.ballgreen}`}  onClick={oncolr} data-colr='green'></div>
-          
-        </div>*/}
+       
         
         <div style={{...mirrorLetter, ...mirrorA}}>B</div>
         <div style={{...mirrorLetter, ...mirrorB}}>D</div>

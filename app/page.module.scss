@@ -64,8 +64,8 @@
     
 }
 .ball:hover {
-    width: 100%;
-    height: 100%;
+    width: 85%;
+    height: 85%;
     box-sizing: border-box;
     
     
@@ -74,7 +74,7 @@
    
 } 
 .checkedBall {
-    transform: scale(2);
+    transform: scale(1.2);
 }
 
 .ballyellow {
@@ -288,6 +288,9 @@
     }
     .info {
         font-size: 15px;
+    }
+    .menu {
+        margin-top: 170px;
     }
   }
 

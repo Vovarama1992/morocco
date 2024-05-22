@@ -14,7 +14,7 @@ const colours = ['red', 'blueviolet', 'lightblue', 'yellow', 'green'];
 
 
 export default function Home() {
-  const [colr, setcolr] = useState('red');
+  const [colr, setcolr] = useState('blueviolet');
   const [scroll, setScroll] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const cursorRef = useRef(null);

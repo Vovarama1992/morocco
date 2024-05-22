@@ -115,7 +115,7 @@ export default function Home() {
         gradient = `radial-gradient(circle at top center, lime 0%, #00FF00 2%, #008000 5%, black ${toBlack}%)`;
         break;
       case 'blueviolet':
-        gradient = `radial-gradient(circle  at 50% -2%, #1E3A8A, black ${toBlack}%, black 60%)`;
+        gradient = `radial-gradient(circle  at 50% -1%, #6947EF, black ${toBlack}%, black 60%)`;
         break;
         case 'lightblue':
         gradient = `radial-gradient(circle at top center, #ADD8E6 0%, #87CEEB 2%, #00BFFF 5%, black ${toBlack}%)`;
@@ -147,8 +147,8 @@ export default function Home() {
     top: '-17%',
     color: 'rgba(0, 0, 0, 0.1)',
     
-    webkitTextStroke: `1px ${colr}`,
-    textStroke: `1px ${colr}`,
+    webkitTextStroke: `1.1px white`,
+    textStroke: `1.1px white`,
 marginBottom: '0px',
     fontFamily: 'Goku',
     fontWeight: 100,

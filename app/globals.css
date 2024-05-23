@@ -1,3 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  
+  .text-purple {
+    color: #6b46c1; /* Цвет текста */
+  }
+  .text-custom-white {
+    color: rgba(255, 255, 255, 1);
+  }
+  .text-custom-black {
+    color: rgba(0, 0, 0, 0.2);
+  }
+  .text-stroke-white {
+    -webkit-text-stroke: 1px white;
+    text-stroke: 1px white;
+  }
+  .font-goku {
+    font-family: 'Goku', sans-serif;
+  }
+  .font-raleway {
+    font-family: 'Raleway', sans-serif;
+  }
+  .font-alegreya {
+    font-family:  'Alegreya', serif;
+  }
+}
+
 body {
     cursor: none;
     

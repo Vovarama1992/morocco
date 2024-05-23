@@ -1,16 +1,13 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
+import Title from './Title';
 import styles from "./page.module.scss";
 import Works from './Works';
 import './globals.css';
 
-const [name, surname] = ['Osama', 'Naimallah'];
-const profession = "Full-stack developer and researcher ";
-const profdesc = 'from Turkestan specialize in both front-end and back-end technologies, bringing creative solutions to complex problems.';
-const city = "Ekt";
-const weather = '13°C';
-const time = '5:33PM';
+
 const colours = ['red', 'blueviolet', 'lightblue', 'yellow', 'green'];
+
 
 
 export default function Home() {
@@ -63,40 +60,8 @@ export default function Home() {
       document.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  const titleStyle = {
-    position: 'absolute',
-    top: isMobile ? '24%' : '18%',
-    paddingTop: '5%',
-    height: isMobile ? '780px' : 'auto',
-    left: isMobile ? '19%' : '28%', 
-    width: isMobile ? '65%' : '45%',
-    display: 'flex', 
-    flexDirection: 'column', 
-    justifyContent: 'center', 
-    alignItems: 'center', 
-    
-    fontWeight: 600, 
-    fontSize: isMobile ? '70px' : '125px',
-    
-    color: 'white',
-    borderBottom: '2px dotted rgb(9, 4, 4)', 
-  };
-  const descriptionStyle = {
-    marginTop: '7px',
-    lineHeight: isMobile ? '1.5' : '1.9',
-    fontWeight: 100,
-    
-    width: isMobile ? '140%' : '90%',
-    fontSize: isMobile ? '14px' : '18px',
-    fontFamily: 'Raleway, sans-serif',
-    textAlign: 'center',
-  };
-  const span = {
-    fontSize: isMobile ? '20px' : '25px',
-    fontWeight: 100,
-    fontFamily: 'TrumpGothicPro-Bold',
-  }
-
+  
+  
   
 
   function generateGradient(colr, toBlack) {
@@ -130,58 +95,28 @@ export default function Home() {
   }
 
   const gradient = generateGradient(colr);
-
-  const mirrorLetter = {
-    position: 'fixed',
-    transition: 'left 0.9s ease, top 0.9s ease',
-    fontSize: isMobile ? '85px' : '145px',
-    color: 'white',
-    fontWeight: '200',
-    fontFamily: 'Goku',
+  const mirrorLetter = `fixed transition-[left_0.3s_ease,top_0.3s_ease] text-white font-light font-goku text-[85px] lg:text-[145px] pointer-events-none`;
+  const mirrorLetterStyle = {
     textShadow: `-8px 13px ${colr}`,
   };
 
-  const shadow = {
-    position: 'absolute',
-    left: '-6%',
-    top: '-17%',
-    color: 'rgba(0, 0, 0, 0.2)',
-    
-    webkitTextStroke: `1px white`,
-    textStroke: `1px white`,
-marginBottom: '0px',
-    fontFamily: 'Goku',
-    fontWeight: 100,
-   
-    
-    
-  };
-  const withShadow = {
-    color: 'rgba(255, 255, 255, 1)',
-    position: 'relative',
-    marginBottom: '0px',
-    fontFamily: 'Goku',
-    fontWeight: 100,
-  }
+const cloudWrapper = {
+  width: isMobile ? '68px' : '50px',
+  marginLeft: '-10px',
+  marginTop: '-2px',
+  borderRadius: '50%',
+  border: '4px solid rgba(0, 0, 0, 0.5)',
+  background: `${colr}`,
+  height: '50px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+ 
 
-  const noShadow = {
-    marginTop: isMobile ? '-10px' : '-40px',
-    fontFamily: 'Goku, sans-serif',
-    fontWeight: 100,
-  }
 
-  const gradientChangerStyles = {
-    position: 'fixed',
-    top: '30%',
-    left: isMobile ? '-10%' : '3%',
-    width: '0.1px',
-    
-    height: '270px',
-    background: 'inherit',
+}
   
-};
-
-
+ 
 function oncolr(newcolr) {
   setcolr(newcolr);
 }
@@ -200,126 +135,62 @@ const mirrorC = {
   left: isMobile ? '59%' : '75%',
   top: `calc(76% - ${scroll * 0.8}px)`,
 }
-const od = {
-  position: 'absolute',
-  fontSize: '40px',
-  fontFamily: 'Goku',
-  width: '500px',
-  height: '500px',
-  color: 'white',
-  left: '-9%',
-  top: '56px',
-}
-const scroller = {
-  position: 'fixed',
-  width: '500px',
-  height: '500px',
-  color: 'white',
-  left: isMobile ? '70%' : '96%',
-  top: '16px',
-}
-const lineA = {
-  position: 'absolute',
-  top: '10%',
-  width: '55px',
-  height: '1px',
-  background: 'white'
-}
-const lineB = {
-  position: 'absolute',
-  top: '12%',
-  width: '55px',
-  height: '2px',
-  background: 'white'
-}
-const scrollLine = {
-  position: 'absolute',
-  left:  '5.5%',
-  top: '14%',
-  opacity: 0.6,
-  width: '1px',
-  height: isMobile ? '300px' : '460px',
-  background: 'white'
-}
-const scrolledLine = {
-  position: 'absolute',
-  opacity: 1,
-  left: '0%',
-  top: '0%',
-  width: '200%',
-  background: `${colr}`,
+
+
+
+
+
+const scrollLineStyles = {
+  background: colr,
   height: `${scrollHeight}%`,
-}
+};
 
-const point = {
-  color: 'red',
-  fontSize: '40px',
-}
-
-const cloudWrapper = {
-  width: isMobile ? '68px' : '50px',
-  marginLeft: '-10px',
-  marginTop: '-2px',
-  borderRadius: '50%',
-  border: '4px solid rgba(0, 0, 0, 0.5)',
-  background: `${colr}`,
-  
-  height: '50px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
- 
+const scrollLineClasses = `absolute opacity-100 left-0 top-0 w-[200%]`;
 
 
-}
-const shadowCombo = {
-  position: 'relative'
-}
-const cloud = {
-  width: '30px',
-  height: '30px',
-  background: 'white,'
-}
 
-const bigBall = {
-    position: 'absolute',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    left: '-16px',
-    width: '42px',
-    height: '42px',
-    borderRadius: '50%',
-    border: 'none',
-    background: 'inherit',
-}
+
+
+
 
 const border = {
   border: '2px solid white',
 }
 
   return (
-    <main className={styles.container} style={{ background: gradient }}>
-      <div className={styles.titleWrapper}>
-        <div style={od}>OD<span style={point}>.</span>
-        <div style={scroller}>
+    <main
+      className="
+        relative
+        top-[-20px] left-[-20px]
+        h-[3300px]
+        w-[100vw]
+        box-border
+        cursor-none
+      " style={{ background: gradient }}>
+      <div className="relative left-10 w-[80%] h-[20%]">
+        <div className="absolute text-5xl font-goku 
+        w-80 h-80 text-white 
+        left-[9%] top-[56px]">
+          OU
+          <span className="text-40" style={{ color: colr }}>.</span>
+        <div className="fixed w-[70px] h-[500px] text-white top-[16px] left-[70%] lg:left-[96%]">
         
-          <div style={lineA}></div>
+          <div className="absolute top-[4%] left-[5%] w-[90%] h-[1px] bg-white"></div>
           
-          <div style={lineB}></div>
-          <div style={scrollLine}>
-          <div style={scrolledLine}></div>
+          <div className="absolute left-[5%] top-[6%] w-[90%] h-[2px] bg-white"></div>
+          <div className="absolute left-[49%] top-[9%] opacity-60 w-[2%] h-[300px] lg:h-[460px] bg-white">
+          <div className={scrollLineClasses} style={scrollLineStyles}></div>
           </div>
         
           </div>
                               
         </div>
-        <div style={gradientChangerStyles}>
+        <div className="fixed top-[3%] lg:top-[30%] left-[26%] lg:left-[3%] w-[270px] lg:w-[0.1px] h:[0.1px] lg:h-[270px] bg-transparent">
   {colours.map((colour, index) => {
     const colrClass = 'ball' + colour;
-
+    const vektor = isMobile ? 'left' : 'top';
     return (
-      <div key={index} style={{ ...bigBall, top: `${index * 25}%`, ...(colr === colour && border) }}>
+      <div key={index} className="absolute flex items-center justify-center left-[-16px] w-[42px] h-[42px] rounded-full border-none bg-transparent" style={{ [vektor]: `${index * 25}%`, ...(colr === colour && border) }}>
         <div className={`${styles.ball} ${styles[colrClass]} ${colr === colour ? styles.checkedBall : ''}`}  onClick={() => oncolr(colour)} data-color={colour}></div>
       </div>
     );
@@ -327,44 +198,28 @@ const border = {
 </div>
        
         
-        <div style={{...mirrorLetter, ...mirrorA}}>B</div>
-        <div style={{...mirrorLetter, ...mirrorB}}>D</div>
-        <div style={{...mirrorLetter, ...mirrorC}}>O</div>
-        <div style={titleStyle}>
-          <div style={shadowCombo}>
-            <div style={shadow}>{name}</div>
-            <div style={withShadow}>{name}</div>
-          </div>
-          <span style={noShadow} >{surname}</span>
-          <div style={descriptionStyle}>
-            <span style={span}>{profession}</span>{profdesc}
-          </div>
-          <div className={styles.menu}>
-            <div className={styles.info}>{city}</div>
-            <div className={styles.info}>{weather}</div>
-            <div className={styles.info}>{time}</div>
-            
-            <div style={cloudWrapper}>
-            <div  style={{display: 'none'}} class="bg-red duration-300 ease-linear transform  w-[30px] h-[30px] rounded-full flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentcolr" class="bi bi-clouds-fill" viewBox="0 0 16 16"><path d="M11.473 9a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 14h8.5a2.5 2.5 0 1 0-.027-5z"></path><path d="M14.544 9.772a3.506 3.506 0 0 0-2.225-1.676 5.502 5.502 0 0 0-6.337-4.002 4.002 4.002 0 0 1 7.392.91 2.5 2.5 0 0 1 1.17 4.769z"></path></svg></div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentcolr" class="bi bi-clouds-fill" viewBox="0 0 16 16"><path d="M11.473 9a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 14h8.5a2.5 2.5 0 1 0-.027-5z"></path><path d="M14.544 9.772a3.506 3.506 0 0 0-2.225-1.676 5.502 5.502 0 0 0-6.337-4.002 4.002 4.002 0 0 1 7.392.91 2.5 2.5 0 0 1 1.17 4.769z"></path></svg>
-            <path d="M11.473 9a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 14h8.5a2.5 2.5 0 1 0-.027-5z"></path>
-            <path d="M14.544 9.772a3.506 3.506 0 0 0-2.225-1.676 5.502 5.502 0 0 0-6.337-4.002 4.002 4.002 0 0 1 7.392.91 2.5 2.5 0 0 1 1.17 4.769z"></path>
+        <div className={mirrorLetter} style={{...mirrorLetterStyle, ...mirrorA}}>B</div>
+        <div className={mirrorLetter} style={{...mirrorLetterStyle, ...mirrorB}}>D</div>
+        <div className={mirrorLetter} style={{...mirrorLetterStyle, ...mirrorC}}>O</div>
+        <Title scrollY={scroll} children={
+          <button style={cloudWrapper}>
+          <div  style={{display: 'none'}} class="bg-red duration-300 ease-linear transform  w-[30px] h-[30px] rounded-full flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentcolr" class="bi bi-clouds-fill" viewBox="0 0 16 16"><path d="M11.473 9a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 14h8.5a2.5 2.5 0 1 0-.027-5z"></path><path d="M14.544 9.772a3.506 3.506 0 0 0-2.225-1.676 5.502 5.502 0 0 0-6.337-4.002 4.002 4.002 0 0 1 7.392.91 2.5 2.5 0 0 1 1.17 4.769z"></path></svg></div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-clouds-fill" viewBox="0 0 16 16"><path d="M11.473 9a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 14h8.5a2.5 2.5 0 1 0-.027-5z"></path><path d="M14.544 9.772a3.506 3.506 0 0 0-2.225-1.676 5.502 5.502 0 0 0-6.337-4.002 4.002 4.002 0 0 1 7.392.91 2.5 2.5 0 0 1 1.17 4.769z"></path></svg>
+          
 
-              {/* <img style={cloud} src='/cloud.png'></img> */}
-            </div>
-          
-          </div>
-          
-        </div>
-        <div ref={cursorRef} className={styles.cursor}>
-          <div ref={dotRef} className={styles.redDot}></div>
-        </div>
+            
+          </button>
+        }
+         colr={colr}/>
+        
         
         
       </div>
-      <Works colr={colr}/>
+      <Works scrollY={scroll} colr={colr}/>
+      <div ref={cursorRef} className={styles.cursor}>
+          <div ref={dotRef} className={styles.redDot}></div>
+        </div>
     </main>
   );
 }
-
 

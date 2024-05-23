@@ -11,8 +11,8 @@ const urls = ['/kitten1.jpg',  '/kitten2.jpg', '/kitten1.jpg', '/kitten3.jpg', '
       const [isModal, setModal] = useState(false);
       const [chosenUrl, setChose] = useState(null);
     
-      const worksTitle = `  absolute text-[80px] text-custom-black text-stroke-white transition-transform duration-800 transform left-[17%] top-[17%] mb-0 font-goku font-medium ${
-        scrollY < 200 ? ' transition-transform duration-300 transform translate-x-[-37%] translate-y-[-47%]' : ''
+      const worksTitle = `  absolute text-[80px] text-custom-black text-stroke-white transition-transform duration-700 ease transform left-[17%] top-[17%] mb-0 font-goku font-medium ${
+        scrollY < 200 ? ' transition-transform duration-700 ease transform translate-x-[-37%] translate-y-[-47%]' : ''
       }`;
     
       function openModal(url) {

@@ -167,12 +167,12 @@ const colours = ['red', 'blueviolet', 'lightblue', 'yellow', 'green'];
           <div className="fixed w-[70px] h-[500px] text-white top-[16px] left-[80%] lg:left-[93%]">
             <div className="hidden lg:block absolute top-[4%] left-[5%] w-[90%] h-[1px] bg-white"></div>
             <div className="hidden lg:block absolute left-[5%] top-[6%] w-[90%] h-[2px] bg-white"></div>
-            <div className="absolute left-[49%] top-[9%] opacity-60 w-[2%] h-[300px] lg:h-[460px] bg-white">
-              <div className={scrollLineClasses} style={scrollLineStyles}></div>
+            <div hidden lg:block className="absolute left-[49%] top-[9%] opacity-60 w-[2%] h-[300px] lg:h-[460px] bg-white">
+              <div hidden lg:block className={scrollLineClasses} style={scrollLineStyles}></div>
             </div>
           </div>
         </div>
-        <div className="absolute pointer-events-auto top-[3%] lg:top-[30%] left-[26%] lg:left-[3%] w-[270px] lg:w-[0.1px] h:[0.1px] lg:h-[270px] bg-transparent">
+        <div className="absolute pointer-events-auto top-[3%] lg:top-[30%] left-[16%] lg:left-[3%] w-[270px] lg:w-[0.1px] h:[0.1px] lg:h-[270px] bg-transparent">
           {colours.map((colour, index) => {
             const colrClass = 'ball' + colour;
             const vektor = isMobile ? 'left' : 'top';

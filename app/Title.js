@@ -1,15 +1,36 @@
-import styles from './page.module.scss';
-import { useRef } from 'react';
 
-export default function Title({ children, scrollY}) {
-const nameRef = useRef(null);
-const nameClass = `absolute text-custom-black text-stroke-white mb-0 font-goku font-thin ${
-    scrollY < 200 ? 'transition-transform duration-300 transform translate-x-[-5%] translate-y-[-17%]' : ''
+
+import styles from './page.module.scss';
+
+
+
+
+
+ export default function Tittle({ children, scrollY, mobile, colr}) {
+  
+  const cloudWrapper = {
+    width: mobile ? '68px' : '50px',
+    marginLeft: '-10px',
+    marginTop: '-2px',
+    borderRadius: '50%',
+    border: '4px solid rgba(0, 0, 0, 0.5)',
+    background: `${colr}`,
+    height: '50px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+   
+  
+  
+  }
+
+const nameClass = `absolute text-custom-black ml-[63px] mt-[40px] text-stroke-white mb-0 font-goku font-thin ${
+    scrollY < 200 ? 'transition-transform duration-300 transform translate-x-[-25%] lg:translate-x-[-13%] translate-y-[-46%] lg:translate-y-[-27%]' : ''
   }`;
     return (
         <div className="
         relative
-        top-[4%] lg:top-[18%]
+        top-[12%] lg:top-[18%]
         
         pt-[5%]
         h-[780px] lg:h-auto
@@ -22,29 +43,36 @@ const nameClass = `absolute text-custom-black text-stroke-white mb-0 font-goku f
         border-b-2 border-dotted border-[#090404]
       ">
           <h1 className="relative">
-          <div ref={nameRef} className={nameClass}>Osama</div>
-         <div class="relative mb-0 
+          <span className={nameClass}>Osama</span>
+         <span class="relative mb-0 ml-[30px]
          font-goku font-thin
-          text-custom-white">Osama</div>
-          </h1>
-          <span class="font-goku font-thin 
+          text-custom-white">Osama</span>
+          
+          
+          <span class="block font-goku  font-thin 
           mt-[-10px] md:mt-[-40px]">Ushakov</span>
-          <div class="mt-7 leading-6 md:leading-7 
+    </h1>
+    
+          <div class="mt-[7px] leading-6 md:leading-7 
           font-medium w-ful md:w-9/10 
-          text-center text-sm md:text-base font-raleway">
-            <span className={`font-trump-gothic-pro font-bold text-[15px] lg:text-[25px] font-light`}>Full-stack developer and researcher </span>
+          text-center text-[14px] lg:text-[18px] font-raleway">
+            <span className={`font-trump-gothic-pro font-bold text-[19px] lg:text-[26px] font-light`}>Full-stack developer and researcher </span>
             from Omsk specialize in both front-end and back-end technologies, bringing creative solutions to complex problems.
           </div>
           <div className="flex justify-center items-center gap-10 w-full font-alegreya h-10 mt-[39px] ">
-            <div className="text-white text-[21px]">Om</div>
-            <div className="text-white text-[21px]">13°C</div>
-            <div className="text-white text-[21px]">5:33PM</div>
-           
-            
             {children}
+           
+            <button style={cloudWrapper}>
+              <div  style={{display: 'none'}} class="bg-red duration-300 ease-linear transform  w-[30px] h-[30px] rounded-full flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentcolr" class="bi bi-clouds-fill" viewBox="0 0 16 16"><path d="M11.473 9a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 14h8.5a2.5 2.5 0 1 0-.027-5z"></path><path d="M14.544 9.772a3.506 3.506 0 0 0-2.225-1.676 5.502 5.502 0 0 0-6.337-4.002 4.002 4.002 0 0 1 7.392.91 2.5 2.5 0 0 1 1.17 4.769z"></path></svg></div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-clouds-fill" viewBox="0 0 16 16"><path d="M11.473 9a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 14h8.5a2.5 2.5 0 1 0-.027-5z"></path><path d="M14.544 9.772a3.506 3.506 0 0 0-2.225-1.676 5.502 5.502 0 0 0-6.337-4.002 4.002 4.002 0 0 1 7.392.91 2.5 2.5 0 0 1 1.17 4.769z"></path></svg>
+            
+            
+              </button>
+            
           
           </div>
           
         </div>
     )
 }
+

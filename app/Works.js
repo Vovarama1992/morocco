@@ -73,8 +73,9 @@ const urls = ['/kitten1.jpg',  '/kitten2.jpg', '/kitten1.jpg', '/kitten3.jpg', '
                   width: isMobile ? '90%' : '45%',
                   height: '420px',
                   borderRadius: '25px',
-                  border: `3px solid ${colr}`,
-                  borderTop: 'none',
+                  borderLeft: `3px solid ${colr}`,
+                  borderRight: `3px solid ${colr}`,
+                  borderBottom: `3px solid ${colr}`,
                   marginLeft: isMobile ? '0%' : index % 2 === 0 ? '0%' : '50%',
                   marginTop: isMobile ? '29px' : index !== 0 ? '-190px' : '20px',
                 }}

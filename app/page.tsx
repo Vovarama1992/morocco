@@ -11,7 +11,7 @@ export default async function Page({
     const reload = searchParams?.reload || 1;
     const city = await iper(reload);
     const weather = await getWeather(city, reload);
-    const time = timer(city, reload);
+    const time = timer( reload);
     return (
         <>
         
@@ -62,7 +62,7 @@ function timer(reload) {
 
   
   if (minutes < 10) {
-      minutes = '0' + minutes;
+      minutes = 0 + minutes;
   }
 
   

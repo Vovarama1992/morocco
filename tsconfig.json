@@ -27,7 +27,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "app/LoginZone/page.js"  ],
   "exclude": [
     "node_modules"
   ]

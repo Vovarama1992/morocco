@@ -124,17 +124,17 @@ const colours = ['red', 'blueviolet', 'lightblue', 'yellow', 'green'];
   }
 
   const mirrorA = {
-    position: 'fixed',
+    
     left: isMobile ? '5%' : '15%',
     top: isMobile ? `calc(65% - ${scroll}px)` : `calc(64% - ${scroll}px)`,
   };
   const mirrorB = {
-    position: 'fixed',
+    
     left: isMobile ? '55%' : '70%',
     top: isMobile ? `calc(10% - ${scroll * 0.2}px)` : `calc(6% - ${scroll * 0.2}px)`,
   };
   const mirrorC = {
-    position: 'fixed',
+    
     left: isMobile ? '78%' : '75%',
     top: isMobile ? `calc(67% - ${scroll * 0.8}px)` : `calc(76% - ${scroll * 0.8}px)`,
   };
@@ -213,6 +213,7 @@ const colours = ['red', 'blueviolet', 'lightblue', 'yellow', 'green'];
       <div  ref={cursorRef} className={styles.cursor}>
         <div ref={dotRef} className={styles.redDot}></div>
       </div>
+      <button className="hidden absolute pointer-events-auto left-[1650px] top-[700px] w-[100px] h-[100px] rounded-10 bg-red-500 text-white"><Link href="/LoginZone">LoginZone</Link></button>
     </main>
   );
 }

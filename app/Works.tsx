@@ -56,7 +56,7 @@ const urls = ['/kitten1.jpg',  '/kitten2.jpg', '/kitten1.jpg', '/kitten3.jpg', '
       return (
         <div className={styles.works}>
           <h2 className="relative">
-            <div className={worksTitle} style={{ WebkitTextStroke: `1px ${colr}`, textStroke: `1px ${colr}` }}>
+            <div className={worksTitle} style={{ WebkitTextStroke: `1px ${colr}` }}>
               Works
             </div>
             <div className="relative mb-0 font-goku font-medium text-custom-white text-[60px]">Works</div>
@@ -81,7 +81,7 @@ const urls = ['/kitten1.jpg',  '/kitten2.jpg', '/kitten1.jpg', '/kitten3.jpg', '
                 }}
               >
                 <div className={styles.imgContainer}>
-                  <Image src={url} layout="fill" objectFit="cover" objectPosition="center" />
+                  <Image src={url} alt='' layout="fill" objectFit="cover" objectPosition="center" />
                 </div>
                 <button
                   onClick={() => openModal(url)}
@@ -107,7 +107,7 @@ const urls = ['/kitten1.jpg',  '/kitten2.jpg', '/kitten1.jpg', '/kitten3.jpg', '
           </div>
           {isModal && (
             <div onClick={() => setModal(false)} className={styles.openUrl}>
-              <Image src={chosenUrl} layout="fill" objectFit="cover" objectPosition="center" />
+              <Image alt='' src={chosenUrl} layout="fill" objectFit="cover" objectPosition="center" />
             </div>
           )}
         </div>

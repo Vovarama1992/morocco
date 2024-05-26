@@ -172,7 +172,7 @@ const colours = ['red', 'blueviolet', 'lightblue', 'yellow', 'green'];
             </div>
           </div>
         </div>
-        <div className="fixed pointer-events-auto top-[3%] lg:top-[30%] left-[26%] lg:left-[3%] w-[270px] lg:w-[0.1px] h:[0.1px] lg:h-[270px] bg-transparent">
+        <div className="absolute pointer-events-auto top-[3%] lg:top-[30%] left-[26%] lg:left-[3%] w-[270px] lg:w-[0.1px] h:[0.1px] lg:h-[270px] bg-transparent">
           {colours.map((colour, index) => {
             const colrClass = 'ball' + colour;
             const vektor = isMobile ? 'left' : 'top';

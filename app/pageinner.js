@@ -7,7 +7,7 @@ import Title from './Title';
 import styles from "./page.module.scss";
 import Works from './Works';
 import './globals.css';
-import {useRouter} from 'next/navigation';
+
 
 const colours = ['red', 'blueviolet', 'lightblue', 'yellow', 'green'];
 
@@ -17,34 +17,13 @@ const colours = ['red', 'blueviolet', 'lightblue', 'yellow', 'green'];
   const [scroll, setScroll] = useState(0);
   
   const [isMobile, setIsMobile] = useState(false);
-  const [count, setCount] = useState(0);
-  const router = useRouter();
+  
   const cursorRef = useRef(null);
   
   
   const dotRef = useRef(null);
   const scrollHeight = Math.min(scroll * 0.05, 100);
-  function reload() {
-    const nextcount = count + 1;
-    setCount(nextcount);
-    router.push({
-      pathname: '/',
-      query: { count: nextcount }
-    });
-  }
-
-
-  useEffect(() => {
-    
-
-    
-
-    window.addEventListener('beforeunload', reload);
-
-    return () => {
-      window.removeEventListener('beforeunload', reload);
-    };
-  }, []);
+  
 
   useEffect(() => {
     const cursor = cursorRef.current;

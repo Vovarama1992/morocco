@@ -9,9 +9,9 @@ export default async function Page({
     searchParams,
   }) {
     const reload = searchParams?.reload || null;
-    const city = await iper();
-    const weather = await getWeather(city);
-    const time = timer(city);
+    const city = await iper(reload);
+    const weather = await getWeather(city, reload);
+    const time = timer(city, reload);
     return (
         <>
         
@@ -27,21 +27,26 @@ export default async function Page({
     )
 }
 
-async function getWeather(city) {
+async function getWeather(city, reload) {
+  if (reload) {
   const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=3bb51a1bebe48592e6f27f16d2cd72e4`);
 const weather = await res.json();
         const celsium = weather.main.temp - 273.15;
         return celsium.toFixed(0);
+  }
 }
 
-async function iper() {
+async function iper(reload) {
+  if (reload) {
   const res = await fetch('https://ipinfo.io/json?token=be47ae5bf1f230');
   const json = await res.json();
   const city = json.city == "Saint Petersburg" ? "Spb" : json.city;
   return city;
+  }
 }
 
-function timer() {
+function timer(reload) {
+  if (reload) {
   const currentTime = new Date();
   let hours = currentTime.getHours();
   let minutes = currentTime.getMinutes();
@@ -64,5 +69,7 @@ function timer() {
   const timeString = `${hours}:${minutes} ${meridiem}`;
 
   return timeString;
+}
+
 }
 

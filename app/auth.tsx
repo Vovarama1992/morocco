@@ -1,6 +1,6 @@
 import { sql } from '@vercel/postgres';
 
-{/*export async function signIn(credentials: string, formData) {
+export async function signIn(credentials: string, formData) {
     const email = formData.get('email');
     const password = formData.get('password');
     try {
@@ -23,4 +23,4 @@ import { sql } from '@vercel/postgres';
         console.error('Ошибка при проверке учетных данных:', error);
         throw error;
       }
-}*/}
+}

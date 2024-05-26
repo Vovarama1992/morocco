@@ -213,7 +213,7 @@ const colours = ['red', 'blueviolet', 'lightblue', 'yellow', 'green'];
       <div  ref={cursorRef} className={styles.cursor}>
         <div ref={dotRef} className={styles.redDot}></div>
       </div>
-      {/*<button className=" absolute pointer-events-auto left-[1650px] top-[700px] w-[100px] h-[100px] rounded-10 bg-red-500 text-white"><Link href="/LoginZone">LoginZone</Link></button>*/}
+      <button className="hidden absolute pointer-events-auto left-[1650px] top-[700px] w-[100px] h-[100px] rounded-10 bg-red-500 text-white"><Link href="/LoginZone">LoginZone</Link></button>
     </main>
   );
 }

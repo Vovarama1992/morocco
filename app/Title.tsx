@@ -20,13 +20,13 @@ import {useRouter} from 'next/navigation';
 
 
   const cloudWrapper = {
-    width: mobile ? '68px' : '50px',
+    width: mobile ? '88px' : '50px',
     marginLeft: '-10px',
     marginTop: '-2px',
     borderRadius: '50%',
     border: '4px solid rgba(0, 0, 0, 0.5)',
     background: `${colr}`,
-    height: '50px',
+    height: '60px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -53,7 +53,7 @@ const nameClass = `absolute text-custom-black ml-[63px] mt-[40px] text-stroke-wh
         text-white
         border-b-2 border-dotted border-[#090404]
       ">
-          <h1 className="relative text-[82px] lg:text-[125px]">
+          <h1 className="relative text-[87px] lg:text-[125px]">
           <span className={nameClass}>Osama</span>
          <span className="relative mb-0 ml-[30px]
          font-goku font-thin
@@ -66,8 +66,8 @@ const nameClass = `absolute text-custom-black ml-[63px] mt-[40px] text-stroke-wh
     
           <div className="mt-[7px] leading-6 md:leading-7 
           font-medium w-ful md:w-9/10 
-          text-center text-[14px] lg:text-[18px] font-raleway">
-            <span className={`font-trump-gothic-pro font-bold text-[19px] lg:text-[26px] font-light`}>Full-stack developer and researcher </span>
+          text-center text-[13px] lg:text-[18px] font-raleway">
+            <span className={`font-trump-gothic-pro font-bold text-[18px] lg:text-[26px] font-light`}>Full-stack developer and researcher </span>
             from Omsk specialize in both front-end and back-end technologies, bringing creative solutions to complex problems.
           </div>
           <div className="flex justify-center items-center gap-10 w-full font-alegreya h-10 mt-[39px] ">

@@ -15,6 +15,7 @@ const colours = ['red', 'blueviolet', 'lightblue', 'yellow', 'green'];
   const [scroll, setScroll] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const cursorRef = useRef(null);
+  
   const dotRef = useRef(null);
   const scrollHeight = Math.min(scroll * 0.05, 100);
   
@@ -22,8 +23,10 @@ const colours = ['red', 'blueviolet', 'lightblue', 'yellow', 'green'];
   useEffect(() => {
     const cursor = cursorRef.current;
     if (!isMobile) {
-      cursor.style.display = 'block';
+      cursor.style.opacity = 1;
     }
+      
+    
 
     const mouseMove = (e) => { 
       let x = e.clientX;
@@ -93,7 +96,7 @@ const colours = ['red', 'blueviolet', 'lightblue', 'yellow', 'green'];
   };
 
   const gradient = generateGradient(colr);
-  const mirrorLetter = `fixed transition-all duration-300 ease-in-out text-white font-light font-goku text-[85px] lg:text-[145px] pointer-events-none`;
+  const mirrorLetter = `fixed transition-all duration-300 ease-in-out text-white font-light font-goku text-[68px] lg:text-[145px] pointer-events-none`;
   const mirrorLetterStyle = { textShadow: `-8px 13px ${colr}` };
 
   const cloudWrapper = {
@@ -117,7 +120,7 @@ const colours = ['red', 'blueviolet', 'lightblue', 'yellow', 'green'];
 
   const mirrorA = {
     position: 'fixed',
-    left: isMobile ? '8%' : '15%',
+    left: isMobile ? '5%' : '15%',
     top: isMobile ? `calc(65% - ${scroll}px)` : `calc(64% - ${scroll}px)`,
   };
   const mirrorB = {
@@ -127,7 +130,7 @@ const colours = ['red', 'blueviolet', 'lightblue', 'yellow', 'green'];
   };
   const mirrorC = {
     position: 'fixed',
-    left: isMobile ? '74%' : '75%',
+    left: isMobile ? '78%' : '75%',
     top: isMobile ? `calc(67% - ${scroll * 0.8}px)` : `calc(76% - ${scroll * 0.8}px)`,
   };
 
@@ -157,9 +160,11 @@ const colours = ['red', 'blueviolet', 'lightblue', 'yellow', 'green'];
     >
       <div className="relative left-10 w-[80%] h-[20%]">
         <div className="absolute text-5xl font-goku w-80 h-80 text-white left-[7%] lg:left-[9%] top-[56px]">
-        <Link href='/'>OU</Link>
-          <span className="text-40" style={{ color: colr }}>.</span>
-          <div className="fixed w-[70px] h-[500px] text-white top-[16px] left-[76%] lg:left-[96%]">
+       <div className="relative text-[27px] lg:text-[44px] left-[-20px]">OU
+       <span className="text-40" style={{ color: colr }}>.</span>
+        </div> 
+          
+          <div className="fixed w-[70px] h-[500px] text-white top-[16px] left-[80%] lg:left-[96%]">
             <div className="hidden lg:block absolute top-[4%] left-[5%] w-[90%] h-[1px] bg-white"></div>
             <div className="hidden lg:block absolute left-[5%] top-[6%] w-[90%] h-[2px] bg-white"></div>
             <div className="absolute left-[49%] top-[9%] opacity-60 w-[2%] h-[300px] lg:h-[460px] bg-white">
@@ -199,7 +204,7 @@ const colours = ['red', 'blueviolet', 'lightblue', 'yellow', 'green'];
              </Title>
       </div>
       <Works scrollY={scroll} colr={colr} />
-      <div ref={cursorRef} className={styles.cursor}>
+      <div  ref={cursorRef} className={styles.cursor}>
         <div ref={dotRef} className={styles.redDot}></div>
       </div>
     </main>

@@ -160,11 +160,11 @@ const colours = ['red', 'blueviolet', 'lightblue', 'yellow', 'green'];
     >
       <div className="relative left-10 w-[80%] h-[20%]">
         <div className="absolute text-5xl font-goku w-80 h-80 text-white left-[7%] lg:left-[9%] top-[56px]">
-       <div className="relative text-[27px] lg:text-[44px] left-[-20px]">OU
+       <div className="relative text-[27px] pointer-events-auto lg:text-[44px] left-[-20px]"><a href="https://vercel.com/vladimirs-projects-80cebf7f">OU</a>
        <span className="text-40" style={{ color: colr }}>.</span>
         </div> 
           
-          <div className="fixed w-[70px] h-[500px] text-white top-[16px] left-[80%] lg:left-[96%]">
+          <div className="fixed w-[70px] h-[500px] text-white top-[16px] left-[80%] lg:left-[93%]">
             <div className="hidden lg:block absolute top-[4%] left-[5%] w-[90%] h-[1px] bg-white"></div>
             <div className="hidden lg:block absolute left-[5%] top-[6%] w-[90%] h-[2px] bg-white"></div>
             <div className="absolute left-[49%] top-[9%] opacity-60 w-[2%] h-[300px] lg:h-[460px] bg-white">

@@ -8,7 +8,7 @@ import Home from './pageinner';
 export default async function Page({
     searchParams,
   }) {
-    
+    const reload = searchParams?.reload || null;
     const city = await iper();
     const weather = await getWeather(city);
     const time = timer(city);

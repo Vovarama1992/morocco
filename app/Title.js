@@ -8,6 +8,7 @@ import styles from './page.module.scss';
 
  export default function Tittle({ children, scrollY, mobile, colr}) {
   
+  
   const cloudWrapper = {
     width: mobile ? '68px' : '50px',
     marginLeft: '-10px',
@@ -62,7 +63,7 @@ const nameClass = `absolute text-custom-black ml-[63px] mt-[40px] text-stroke-wh
           <div className="flex justify-center items-center gap-10 w-full font-alegreya h-10 mt-[39px] ">
             {children}
            
-            <button style={cloudWrapper}>
+            <button  style={cloudWrapper}>
               <div  style={{display: 'none'}} class="bg-red duration-300 ease-linear transform  w-[30px] h-[30px] rounded-full flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentcolr" class="bi bi-clouds-fill" viewBox="0 0 16 16"><path d="M11.473 9a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 14h8.5a2.5 2.5 0 1 0-.027-5z"></path><path d="M14.544 9.772a3.506 3.506 0 0 0-2.225-1.676 5.502 5.502 0 0 0-6.337-4.002 4.002 4.002 0 0 1 7.392.91 2.5 2.5 0 0 1 1.17 4.769z"></path></svg></div>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-clouds-fill" viewBox="0 0 16 16"><path d="M11.473 9a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 14h8.5a2.5 2.5 0 1 0-.027-5z"></path><path d="M14.544 9.772a3.506 3.506 0 0 0-2.225-1.676 5.502 5.502 0 0 0-6.337-4.002 4.002 4.002 0 0 1 7.392.91 2.5 2.5 0 0 1 1.17 4.769z"></path></svg>
             

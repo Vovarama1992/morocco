@@ -1,11 +1,13 @@
 'use client';
 import { useState, useEffect, useRef} from 'react';
+
 import Link from 'next/link';
 
 import Title from './Title';
 import styles from "./page.module.scss";
 import Works from './Works';
 import './globals.css';
+import {useRouter} from 'next/navigation';
 
 const colours = ['red', 'blueviolet', 'lightblue', 'yellow', 'green'];
 
@@ -13,12 +15,36 @@ const colours = ['red', 'blueviolet', 'lightblue', 'yellow', 'green'];
  export default function Home({ children }) {
   const [colr, setColr] = useState('blueviolet');
   const [scroll, setScroll] = useState(0);
+  
   const [isMobile, setIsMobile] = useState(false);
+  const [count, setCount] = useState(0);
+  const router = useRouter();
   const cursorRef = useRef(null);
+  
   
   const dotRef = useRef(null);
   const scrollHeight = Math.min(scroll * 0.05, 100);
-  
+  function reload() {
+    const nextcount = count + 1;
+    setCount(nextcount);
+    router.push({
+      pathname: '/',
+      query: { count: nextcount }
+    });
+  }
+
+
+  useEffect(() => {
+    
+
+    
+
+    window.addEventListener('beforeunload', reload);
+
+    return () => {
+      window.removeEventListener('beforeunload', reload);
+    };
+  }, []);
 
   useEffect(() => {
     const cursor = cursorRef.current;
@@ -137,9 +163,10 @@ const colours = ['red', 'blueviolet', 'lightblue', 'yellow', 'green'];
   const scrollLineStyles = {
     background: colr,
     height: `${scrollHeight}%`,
+    opacity: isMobile ? 0 : 1,
   };
 
-  const scrollLineClasses = `absolute opacity-100 left-0 top-0 w-[200%]`;
+  const scrollLineClasses = `absolute opacity-0 lg:opacity-100 left-0 top-0 w-[200%]`;
 
   const border = {
     border: '2px solid white',
@@ -167,8 +194,8 @@ const colours = ['red', 'blueviolet', 'lightblue', 'yellow', 'green'];
           <div className="fixed w-[70px] h-[500px] text-white top-[16px] left-[80%] lg:left-[93%]">
             <div className="hidden lg:block absolute top-[4%] left-[5%] w-[90%] h-[1px] bg-white"></div>
             <div className="hidden lg:block absolute left-[5%] top-[6%] w-[90%] h-[2px] bg-white"></div>
-            <div hidden lg:block className="absolute left-[49%] top-[9%] opacity-60 w-[2%] h-[300px] lg:h-[460px] bg-white">
-              <div hidden lg:block className={scrollLineClasses} style={scrollLineStyles}></div>
+            <div className="hidden lg:block absolute left-[49%] top-[9%] opacity-60 w-[2%] h-[300px] lg:h-[460px] bg-white">
+              <div className={scrollLineClasses} style={scrollLineStyles}></div>
             </div>
           </div>
         </div>

@@ -2,14 +2,16 @@
 import styles from './page.module.scss';
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-const urls = ['/kitten1.jpg',  '/kitten2.jpg', '/kitten1.jpg', '/kitten3.jpg', '/kitten4.jpg', '/kitten2.jpg',
-    ,'/kitten5.jpg'];
+const urls = ['/kitten1.jpg',  '/kitten2.jpg', '/kitten3.jpg', '/kitten4.jpg', 
+    '/kitten5.jpg'];
 
     export default function Works({ colr, scrollY }) {
       const [isMobile, setIsMobile] = useState(false);
       const [startIndex, setIndex] = useState(0);
       const [isModal, setModal] = useState(false);
       const [chosenUrl, setChose] = useState(null);
+      const right = '>';
+      const left = '<';
     
       const worksTitle = `  absolute text-[80px] text-custom-black text-stroke-white transition-transform duration-700 ease transform left-[17%] top-[17%] mb-0 font-goku font-medium ${
         scrollY < 200 ? ' transition-transform duration-700 ease transform translate-x-[-37%] translate-y-[-47%]' : ''
@@ -81,7 +83,7 @@ const urls = ['/kitten1.jpg',  '/kitten2.jpg', '/kitten1.jpg', '/kitten3.jpg', '
                 }}
               >
                 <div className={styles.imgContainer}>
-                  <Image src={url} alt='' layout="fill" objectFit="cover" objectPosition="center" />
+                  <Image src={url} alt={url} fill objectFit="cover" objectPosition="center" />
                 </div>
                 <button
                   onClick={() => openModal(url)}
@@ -110,11 +112,17 @@ const urls = ['/kitten1.jpg',  '/kitten2.jpg', '/kitten1.jpg', '/kitten3.jpg', '
               <Image alt='' src={chosenUrl} layout="fill" objectFit="cover" objectPosition="center" />
             </div>
           )}
+          <button onClick={() => setIndex(startIndex - 1)} className="absolute pointer-event-auto w-[40px] h-[40px] bg-transparent text-[50px] text-red-500 left-[93%] lg:left-[46%] top-[87%] ">
+                {left}
+          </button>
+          <button onClick={() => setIndex(startIndex + 1)} className="absolute pointer-event-auto w-[40px] h-[40px] bg-transparent text-[50px] text-green-500  left-[93%] lg:left-[46%] top-[92%] ">
+                {right}
+          </button>
         </div>
       );
     }
 
-function getGallery(array, startIndex) {
+function getGallery(array: string[], startIndex: number) {
     const result = [];
     const arrayLength = array.length;
   

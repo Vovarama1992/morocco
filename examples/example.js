@@ -4,10 +4,10 @@ const SitemapGenerator = require('sitemap-generator-custom-volodzya');
 const InvalidDataException = require('sitemap-generator-custom-volodzya/src/exceptions/InvalidDataException');
 const FileAccessException = require('sitemap-generator-custom-volodzya/src/exceptions/FileAccessException');
 
-// Исключенные директории
+
 const excludedDirs = ['node_modules', '.git'];
 
-// Функция для рекурсивного сканирования директорий
+
 function getPages(dir, baseURL = '') {
     let pages = [];
     const files = fs.readdirSync(dir);
@@ -35,17 +35,17 @@ function getPages(dir, baseURL = '') {
     return pages;
 }
 
-// Путь к корневой директории вашего сайта
+
 const basePath = path.join(__dirname, '..');
 
-// Получение массива страниц
+
 const pages = getPages(basePath);
 
 console.log(`Total pages found: ${pages.length}`);
 console.log(pages);
 
-const fileType = 'xml'; // можно использовать 'csv' или 'json'
-const filePath = path.join(__dirname, '..', 'sitemap.xml'); // путь к файлу, где будет сохранена карта сайта
+const fileType = 'xml'; 
+const filePath = path.join(__dirname, '..', 'sitemap.xml'); 
 
 try {
     new SitemapGenerator(pages, fileType, filePath);
